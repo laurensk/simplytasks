@@ -10,6 +10,7 @@ class SimplytasksApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Simplytasks',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(brightness: Brightness.light),
       darkTheme: ThemeData(brightness: Brightness.dark),
       home: Home(),
