@@ -11,6 +11,7 @@ class _HomeState extends State<Home> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Simplytasks"),
+        brightness: Brightness.dark,
       ),
       body: Center(
         child: Text("Welcome to Simplytasks!"),
