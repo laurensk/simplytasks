@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:simplytasks/widgets/custom_scaffold.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -8,13 +9,12 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Simplytasks"),
-        brightness: Brightness.dark,
-      ),
-      body: Center(
-        child: Text("Welcome to Simplytasks!"),
+    return CustomScaffold(
+      title: "Simplytasks",
+      body: Container(
+        child: Center(
+          child: Text("Welcome to Simplytasks."),
+        ),
       ),
     );
   }
