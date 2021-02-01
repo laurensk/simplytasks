@@ -99,7 +99,7 @@ class _HomeState extends State<Home> {
       "Code ansehen",
       "Liste leeren",
       "App herunterladen",
-      "Einführung ansehen"
+      "Tour starten"
     ], functions: [
       () => showCode(),
       () => clearList(),
