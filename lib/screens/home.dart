@@ -42,64 +42,74 @@ class _HomeState extends State<Home> {
           child: ListView(
             children: [
               Padding(padding: EdgeInsets.only(top: 10)),
-              for (Task task in tasks)
-                Card(
-                  elevation: 3,
-                  child: ListTile(
-                    onTap: () {
-                      setState(() {
-                        task.done = !task.done;
-                      });
-                      Timer(Duration(milliseconds: 1500), () {
-                        if (task.done)
-                          setState(() {
-                            tasks.remove(task);
-                            safeTasks();
-                          });
-                      });
-                    },
-                    leading: Icon(task.done
-                        ? Icons.check_box
-                        : Icons.check_box_outline_blank),
-                    title: Text(task.task),
-                  ),
-                ),
-              Card(
-                elevation: 3,
-                child: ListTile(
-                  onTap: () {
-                    setState(() {
-                      tasks.add(Task(task: "New task"));
-                      safeTasks();
-                    });
-                  },
-                  leading: Icon(Icons.add),
-                  title: Text(
-                    'Task erstellen',
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                ),
-              ),
-              ButtonGroup(titles: [
-                "Code ansehen",
-                "Liste leeren",
-                "App herunterladen",
-                "Einführung ansehen"
-              ], functions: [
-                () {},
-                () {
-                  setState(() {
-                    tasks = [];
-                    safeTasks();
-                  });
-                },
-                () {},
-                () {}
-              ])
+              for (Task task in tasks) buildTask(task),
+              buildAddButton(),
+              buildButtonGroup()
             ],
           ),
         ),
       ),
     );
+  }
+
+  buildTask(Task task) {
+    return Card(
+      elevation: 3,
+      child: ListTile(
+        onTap: () {
+          setState(() {
+            task.done = !task.done;
+          });
+          Timer(Duration(milliseconds: 1500), () {
+            if (task.done)
+              setState(() {
+                tasks.remove(task);
+                safeTasks();
+              });
+          });
+        },
+        leading:
+            Icon(task.done ? Icons.check_box : Icons.check_box_outline_blank),
+        title: Text(task.task),
+      ),
+    );
+  }
+
+  buildAddButton() {
+    return Card(
+      elevation: 3,
+      child: ListTile(
+        onTap: () {
+          setState(() {
+            tasks.add(Task(task: "New task"));
+            safeTasks();
+          });
+        },
+        leading: Icon(Icons.add),
+        title: Text(
+          'Task erstellen',
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
+      ),
+    );
+  }
+
+  buildButtonGroup() {
+    return ButtonGroup(titles: [
+      "Code ansehen",
+      "Liste leeren",
+      "App herunterladen",
+      "Einführung ansehen"
+    ], functions: [
+      () {},
+      () {
+        setState(() {
+          tasks = [];
+          safeTasks();
+        });
+      },
+      () {},
+      () {}
+    ]);
   }
 }
