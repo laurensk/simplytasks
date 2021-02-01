@@ -1,6 +1,7 @@
 class Task {
   String task;
   bool done = false;
+  bool init = false;
 
   Task({this.task});
 
