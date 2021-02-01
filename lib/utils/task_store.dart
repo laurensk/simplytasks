@@ -10,7 +10,14 @@ class Task {
 }
 
 class TaskStore {
-  add(Task task) {}
+  static Future<List<Task>> getTasks() async {
+    List<Task> tasks = [
+      Task(task: "Build app"),
+      Task(task: "Test app"),
+      Task(task: "Release app")
+    ];
+    return tasks;
+  }
 
-  remove(Task task) {}
+  static safeTasks(List<Task> tasks) async {}
 }

@@ -12,11 +12,25 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  List<Task> tasks = [
-    Task(task: "Build app"),
-    Task(task: "Test app"),
-    Task(task: "Release app")
-  ];
+  List<Task> tasks = [];
+
+  @override
+  void initState() {
+    getTasks();
+    super.initState();
+  }
+
+  getTasks() async {
+    var tasks = await TaskStore.getTasks();
+    setState(() {
+      this.tasks = tasks;
+    });
+  }
+
+  safeTasks() {
+    print("im gonne safe now!");
+    TaskStore.safeTasks(tasks);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -40,6 +54,7 @@ class _HomeState extends State<Home> {
                         if (task.done)
                           setState(() {
                             tasks.remove(task);
+                            safeTasks();
                           });
                       });
                     },
@@ -55,6 +70,7 @@ class _HomeState extends State<Home> {
                   onTap: () {
                     setState(() {
                       tasks.add(Task(task: "New task"));
+                      safeTasks();
                     });
                   },
                   leading: Icon(Icons.add),
@@ -74,6 +90,7 @@ class _HomeState extends State<Home> {
                 () {
                   setState(() {
                     tasks = [];
+                    safeTasks();
                   });
                 },
                 () {},
