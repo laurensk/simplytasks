@@ -32,9 +32,10 @@ class TaskStore {
     }
 
     List<Task> tasks = [
-      Task(task: "Build app"),
-      Task(task: "Test app"),
-      Task(task: "Release app")
+      Task(task: "Planung der App"),
+      Task(task: "Gestaltung der App"),
+      Task(task: "Entwicklung der App"),
+      Task(task: "Veröffentlichung der App"),
     ];
     saveTasks(tasks);
     return tasks;

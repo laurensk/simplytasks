@@ -160,7 +160,7 @@ final Widget java = Column(
     Padding(
       padding: const EdgeInsets.only(top: 8),
       child: Text(
-          "Im zweiten Jahrgang lernen wir Java und damit objektorientierte Programmierung. Wir schauen uns auch zum ersten Mal grafische Benutzeroberflächen an und entwicklen unsere ersten Spiele."),
+          "Im zweiten Jahrgang lernen wir Java und damit objektorientierte Programmierung. Wir schauen uns auch zum ersten Mal grafische Benutzeroberflächen an und entwickeln unsere ersten Spiele."),
     ),
     Padding(
       padding: const EdgeInsets.only(top: 15),
@@ -170,7 +170,7 @@ final Widget java = Column(
     Padding(
       padding: const EdgeInsets.only(top: 8),
       child: Text(
-          "Dieses Programm ist unsere eigene Implementation der bekannten 'Turtle Graphics'. Es geht darum, eine Schildkröte in einem Fenster korrekt zu bewegen. Außerdem wird gezeigt, wie man Buttons, Textfelder und mehr in Benutzeroberflächen einbauen kann."),
+          "Dieses Programm ist unsere eigene Implementation der bekannten 'Turtle Graphics'. Es geht darum, eine Schildkröte in einem Fenster korrekt zu bewegen. Außerdem lernen wir, wie man Buttons, Textfelder und mehr in Benutzeroberflächen einbauen kann."),
     ),
     Padding(
       padding: const EdgeInsets.only(top: 15, bottom: 10),
@@ -195,13 +195,13 @@ final Widget more = Column(
     ),
     Padding(
       padding: const EdgeInsets.only(top: 15),
-      child: Text("Appentwicklung",
+      child: Text("App-Entwicklung",
           style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
     ),
     Padding(
       padding: const EdgeInsets.only(top: 8),
       child: Text(
-          "Apps, genau wie diese hier, müssen auch entwickelt werden. Ab dem dritten Jahrgang beschäftigen wir uns mit der Appentwicklung, speziell für Android-Geräte."),
+          "Apps, genau wie diese hier, müssen auch entwickelt werden. Ab dem dritten Jahrgang beschäftigen wir uns mit der App-Entwicklung, speziell für Android-Geräte."),
     ),
     Padding(
       padding: const EdgeInsets.only(top: 15),
@@ -211,7 +211,7 @@ final Widget more = Column(
     Padding(
       padding: const EdgeInsets.only(top: 8),
       child: Text(
-          "Damit Apps und andere Software Daten verwalten können, müssen diese auch in Datenbanken gespeichert werden. Ab dem dritten Jahrgang entwickeln wir unsere eigenen Datenbankstrukturen."),
+          "Damit Apps und andere Programme Daten verwalten können, müssen diese auch in Datenbanken gespeichert werden. Ab dem dritten Jahrgang entwickeln wir unsere eigenen Datenbankstrukturen."),
     ),
     Padding(
       padding: const EdgeInsets.only(top: 15),
@@ -221,7 +221,7 @@ final Widget more = Column(
     Padding(
       padding: const EdgeInsets.only(top: 8, bottom: 15),
       child: Text(
-          "Zu jedem guten Softwareprodukt zählt die Sicherheit der eingesetzen Infrastuktur. In den höheren Jahrgängen beschäftigen wir uns ausführlich damit, unsere Software vor Hackerangriffen zu schützen."),
+          "Zu jedem guten Softwareprodukt zählt die Sicherheit der eingesetzen Infrastuktur. In den höheren Jahrgängen beschäftigen wir uns ausführlich damit, unsere Programme vor Hacker-Angriffen zu schützen."),
     ),
   ],
 );
