@@ -12,7 +12,7 @@
   </a>
 </p>
 
-**Simple to-do app developed for Tdot 2021.**
+**Simple to-do app developed for ToT 2021.**
 
 ## 💻 Online
 
