@@ -2,6 +2,8 @@ import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:simplytasks/utils/alert_utils.dart';
+import 'package:simplytasks/utils/open_url.dart';
 import 'package:simplytasks/utils/task_store.dart';
 import 'package:simplytasks/widgets/button_group.dart';
 import 'package:simplytasks/widgets/custom_scaffold.dart';
@@ -29,7 +31,7 @@ class _HomeState extends State<Home> {
 
   safeTasks() {
     print("im gonne safe now!");
-    TaskStore.safeTasks(tasks);
+    TaskStore.saveTasks(tasks);
   }
 
   @override
@@ -101,15 +103,30 @@ class _HomeState extends State<Home> {
       "App herunterladen",
       "Einführung ansehen"
     ], functions: [
-      () {},
-      () {
-        setState(() {
-          tasks = [];
-          safeTasks();
-        });
-      },
-      () {},
-      () {}
+      () => showCode(),
+      () => clearList(),
+      () => downloadApp(),
+      () => openIntroduction()
     ]);
   }
+
+  showCode() {
+    OpenUrl.open("https://github.com/laurensk/simplytasks_app");
+  }
+
+  clearList() {
+    AlertUtils.resetConfirmation(context, (confirm) {
+      if (!confirm) return;
+      setState(() {
+        tasks = [];
+        safeTasks();
+      });
+    });
+  }
+
+  downloadApp() {
+    OpenUrl.downloadApp(context);
+  }
+
+  openIntroduction() {}
 }
