@@ -22,7 +22,9 @@ This app is available as web app and is currently deployed on the following doma
 
 ## 📱 Mobile-App
 
-Simplytasks can also be found as mobile app for iOS and Android. Check the following links to download Simplytasks for free.
+Simplytasks can also be found as mobile app for iOS and Android.
+
+Check the following links to download Simplytasks for free.
 
 <a href="https://simplytasks.me/" target="_blank">Simplytasks for iOS</a>
 
