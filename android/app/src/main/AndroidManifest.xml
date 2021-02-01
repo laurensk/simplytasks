@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.simplytasks">
+    package="com.laurensk.simplytasks">
    <application
         android:label="Simplytasks"
         android:icon="@mipmap/ic_launcher">
