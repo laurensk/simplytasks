@@ -1,9 +1,10 @@
 class Task {
-  int id;
   String task;
+  bool done = false;
+
+  Task({this.task});
 
   Task.fromJson(Map<String, dynamic> json) {
-    id = json["id"];
     task = json["task"];
   }
 }
