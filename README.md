@@ -16,17 +16,17 @@
 
 ## 💻 Online
 
-This app is available as Web-App and is currently deployed on the following domain!
+This app is available as Web-App and is currently deployed on the following domain.
 
-[https://simplytasks.me/](https://simplytasks.me/)
+<a href="https://simplytasks.me/" target="_blank">https://simplytasks.me/</a>
 
 ## 📱 Mobile-App
 
 Simplytasks can also be found as mobile app for iOS and Android. Check to following links to download Simplytasks for free.
 
-[Simplytasks for iOS](https://simplytasks.me/)
+<a href="https://simplytasks.me/" target="_blank">Simplytasks for iOS</a>
 
-[Simplytasks for Android](https://simplytasks.me/)
+<a href="https://simplytasks.me/" target="_blank">Simplytasks for Android</a>
 
 ## 📝 License
 
