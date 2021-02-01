@@ -15,17 +15,11 @@ class Introduction extends StatefulWidget {
 class _IntroductionState extends State<Introduction> {
   int current = 0;
 
-  List<IntroductionScreen> screens = [
-    IntroductionScreen(
-        title: "1. Jahrgang",
-        card1: Text("wir machen c"),
-        card2: Text("ja, wirklich"),
-        card3: Text("noch immer!")),
-    IntroductionScreen(title: "2. Jahrgang", card1: Text("wir machen java")),
-    IntroductionScreen(title: "Mehr Infos", card1: Text("wir machen mehr")),
+  final List<IntroductionScreen> screens = [
+    IntroductionScreen(title: "1. Jahrgang", content: c),
+    IntroductionScreen(title: "2. Jahrgang", content: java),
+    IntroductionScreen(title: "Mehr Infos", content: more),
   ];
-
-  final controller = PageController(initialPage: 0);
 
   @override
   void initState() {
@@ -53,13 +47,8 @@ class _IntroductionState extends State<Introduction> {
                     elevation: 3,
                     child: Padding(
                       padding: const EdgeInsets.all(30),
-                      child: PageView(
-                        controller: controller,
-                        children: [
-                          currentScreen.card1,
-                          currentScreen.card2,
-                          currentScreen.card3
-                        ],
+                      child: SingleChildScrollView(
+                        child: currentScreen.content,
                       ),
                     ),
                   ),
@@ -123,9 +112,67 @@ class _IntroductionState extends State<Introduction> {
 
 class IntroductionScreen {
   String title;
-  Widget card1;
-  Widget card2;
-  Widget card3;
+  Widget content;
 
-  IntroductionScreen({this.title, this.card1, this.card2, this.card3});
+  IntroductionScreen({this.title, this.content});
 }
+
+final Widget c = Column(
+  crossAxisAlignment: CrossAxisAlignment.start,
+  children: [
+    Text(
+      "Herzlich willkommen",
+      style: TextStyle(fontSize: 23, fontWeight: FontWeight.w600),
+    ),
+    Padding(
+      padding: const EdgeInsets.only(top: 8),
+      child: Text(
+          "Im ersten Jahrgang starten wir mit der Programmiersprache C. Ein sehr wichtiger Punkt im ersten Jahrgang ist, dass alle Schülerinnen und Schüler auf den gleichen Wissensstand kommen."),
+    ),
+    Padding(
+      padding: const EdgeInsets.only(top: 15),
+      child: Text("Beispiel",
+          style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
+    )
+  ],
+);
+
+final Widget java = Column(
+  crossAxisAlignment: CrossAxisAlignment.start,
+  children: [
+    Text(
+      "Weiter gehts...",
+      style: TextStyle(fontSize: 23, fontWeight: FontWeight.w600),
+    ),
+    Padding(
+      padding: const EdgeInsets.only(top: 8),
+      child: Text(
+          "Im ersten Jahrgang starten wir mit der Programmiersprache C. Ein sehr wichtiger Punkt im ersten Jahrgang ist, dass alle Schülerinnen und Schüler auf den gleichen Wissensstand kommen."),
+    ),
+    Padding(
+      padding: const EdgeInsets.only(top: 15),
+      child: Text("Beispiel",
+          style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
+    )
+  ],
+);
+
+final Widget more = Column(
+  crossAxisAlignment: CrossAxisAlignment.start,
+  children: [
+    Text(
+      "Noch mehr!",
+      style: TextStyle(fontSize: 23, fontWeight: FontWeight.w600),
+    ),
+    Padding(
+      padding: const EdgeInsets.only(top: 8),
+      child: Text(
+          "Im ersten Jahrgang starten wir mit der Programmiersprache C. Ein sehr wichtiger Punkt im ersten Jahrgang ist, dass alle Schülerinnen und Schüler auf den gleichen Wissensstand kommen."),
+    ),
+    Padding(
+      padding: const EdgeInsets.only(top: 15),
+      child: Text("Beispiel",
+          style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
+    )
+  ],
+);
