@@ -29,8 +29,7 @@ class _HomeState extends State<Home> {
     });
   }
 
-  safeTasks() {
-    print("im gonne safe now!");
+  saveTasks() {
     TaskStore.saveTasks(tasks);
   }
 
@@ -60,20 +59,32 @@ class _HomeState extends State<Home> {
       child: ListTile(
         onTap: () {
           setState(() {
-            task.done = !task.done;
+            if (task.task.length > 0) task.done = !task.done;
           });
           Timer(Duration(milliseconds: 1500), () {
             if (task.done)
               setState(() {
                 tasks.remove(task);
-                safeTasks();
+                saveTasks();
               });
           });
         },
         leading:
             Icon(task.done ? Icons.check_box : Icons.check_box_outline_blank),
-        title: Text(task.task),
+        title: task.task.length > 0 ? Text(task.task) : buildInput(task),
       ),
+    );
+  }
+
+  buildInput(Task task) {
+    return TextField(
+      autofocus: true,
+      onSubmitted: (text) {
+        task.task = text;
+        saveTasks();
+      },
+      decoration:
+          InputDecoration(border: InputBorder.none, hintText: "Text eingeben"),
     );
   }
 
@@ -83,8 +94,8 @@ class _HomeState extends State<Home> {
       child: ListTile(
         onTap: () {
           setState(() {
-            tasks.add(Task(task: "New task"));
-            safeTasks();
+            tasks.add(Task(task: ""));
+            saveTasks();
           });
         },
         leading: Icon(Icons.add),
@@ -119,7 +130,7 @@ class _HomeState extends State<Home> {
       if (!confirm) return;
       setState(() {
         tasks = [];
-        safeTasks();
+        saveTasks();
       });
     });
   }

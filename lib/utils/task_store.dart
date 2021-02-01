@@ -4,7 +4,6 @@ import 'dart:convert';
 class Task {
   String task;
   bool done = false;
-  bool init = false;
 
   Task({this.task});
 
@@ -13,7 +12,7 @@ class Task {
   }
 
   static Map<String, dynamic> toMap(Task task) =>
-      {'task': task.task, 'done': task.done, 'init': task.init};
+      {'task': task.task, 'done': task.done};
 
   static String encode(List<Task> tasks) => json.encode(
         tasks.map<Map<String, dynamic>>((task) => Task.toMap(task)).toList(),
