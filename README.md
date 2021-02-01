@@ -26,9 +26,9 @@ Simplytasks can also be found as mobile app for iOS and Android.
 
 Check the following links to download Simplytasks for free.
 
-[Simplytasks for iOS](https://simplytasks.me/)
+- [Simplytasks for iOS](https://simplytasks.me/)
 
-[Simplytasks for Android](https://simplytasks.me/)
+- [Simplytasks for Android](https://simplytasks.me/)
 
 ## 📝 License
 
