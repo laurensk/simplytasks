@@ -11,7 +11,7 @@ class ButtonGroup extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: Padding(
-        padding: EdgeInsets.only(top: 30, left: 20, right: 20),
+        padding: EdgeInsets.only(top: 30, left: 20, right: 20, bottom: 30),
         child: Column(
           children: [
             Row(

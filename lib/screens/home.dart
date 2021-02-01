@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:simplytasks/screens/introduction.dart';
 import 'package:simplytasks/utils/alert_utils.dart';
 import 'package:simplytasks/utils/open_url.dart';
 import 'package:simplytasks/utils/task_store.dart';
@@ -148,5 +149,14 @@ class _HomeState extends State<Home> {
     OpenUrl.downloadApp(context);
   }
 
-  openIntroduction() {}
+  openIntroduction() {
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(
+        builder: (BuildContext context) => Introduction(
+          current: 0,
+        ),
+      ),
+    );
+  }
 }
