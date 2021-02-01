@@ -57,18 +57,7 @@ class _HomeState extends State<Home> {
     return Card(
       elevation: 3,
       child: ListTile(
-        onTap: () {
-          setState(() {
-            if (task.task.length > 0) task.done = !task.done;
-          });
-          Timer(Duration(milliseconds: 1500), () {
-            if (task.done)
-              setState(() {
-                tasks.remove(task);
-                saveTasks();
-              });
-          });
-        },
+        onTap: () => tapTask(task),
         leading:
             Icon(task.done ? Icons.check_box : Icons.check_box_outline_blank),
         title: task.task.length > 0 ? Text(task.task) : buildInput(task),
@@ -79,10 +68,7 @@ class _HomeState extends State<Home> {
   buildInput(Task task) {
     return TextField(
       autofocus: true,
-      onSubmitted: (text) {
-        task.task = text;
-        saveTasks();
-      },
+      onSubmitted: (text) => saveTask(task, text),
       decoration:
           InputDecoration(border: InputBorder.none, hintText: "Text eingeben"),
     );
@@ -119,6 +105,29 @@ class _HomeState extends State<Home> {
       () => downloadApp(),
       () => openIntroduction()
     ]);
+  }
+
+  tapTask(Task task) {
+    setState(() {
+      if (task.task.length > 0) task.done = !task.done;
+    });
+    Timer(Duration(milliseconds: 1500), () {
+      if (task.done)
+        setState(() {
+          tasks.remove(task);
+          saveTasks();
+        });
+    });
+  }
+
+  saveTask(Task task, String text) {
+    setState(() {
+      if (text.length <= 0)
+        tasks.remove(task);
+      else
+        task.task = text;
+    });
+    saveTasks();
   }
 
   showCode() {
