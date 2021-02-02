@@ -14,7 +14,7 @@ class OpenUrl {
   static downloadApp(BuildContext context) async {
     if (kIsWeb) {
       if (getAppUrl() != null) {
-        AlertUtils.alert(context, "You need to HOLD ON!", getAppUrl());
+        open(getAppUrl());
       } else {
         AlertUtils.alert(context, "App herunterladen",
             "Öffne diese Webseite auf deinem Smartphone oder Tablet, um die App herunterzuladen.\nAlternativ kannst du auch im App Store nach 'Simplytasks' suchen.");
@@ -23,8 +23,10 @@ class OpenUrl {
   }
 
   static String getAppUrl() {
-    final String ios = "ios";
-    final String android = "android";
+    final String ios =
+        "https://apps.apple.com/at/app/simplytasks-tot-2021/id1551673175";
+    final String android =
+        "https://play.google.com/store/apps/details?id=com.laurensk.simplytasks";
 
     String userAgent = html.window.navigator.userAgent.toString().toLowerCase();
     if (userAgent.contains("iphone") || userAgent.contains("ipad")) return ios;
